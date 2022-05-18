@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>这里是搜索结果的页面</title>
+</head>
+<body>
+    <a th:text="${title}"></a>
+    <table border="1" style="border-collapse:collapse">
+        <thead style="background:lightgray">
+            <tr>
+            	<td style="width: 5%">id</td>
+                <td>商品名</td>
+                <td>价格</td>
+                <td>产地</td>
+                <td>录入时间</td>
+                <td>删除</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${productList.size()} eq 0">
+                <td colspan="6" align="center" >这里没有数据</td>
+            </tr>
+            <tr th:each="product : ${productList}">
+            	<td th:text="${product.id}"></td>
+                <td th:text="${product.getName()}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.address}"></td>
+                <td th:text="${product.createTime}"></td>
+                <td><a th:href="@{/product/delete/} + ${product.id}">删除</a></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

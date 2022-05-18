@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"> </title>
+</head>
+<body>
+    <a th:text="${content}"></a>
+        <div style="height : 30px">
+       
+    </div>
+    <div>
+    product 数据表的操作： <a th:href="@{/product/registPage}">登录数据</a>  <a th:href="@{/product/searchAll}">显示数据</a>
+    </div>
+
+    
+</body>
+</html>
